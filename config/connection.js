@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-//gets out sql data locally
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
   : new Sequelize(
