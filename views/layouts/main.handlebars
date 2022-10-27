@@ -4,15 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <title>Selectors</title>
+    <title>Goodie Foodie's Review</title>
   </head>
 
   <body>
-  
-<!--add header here-->
 
-
-  {{{body}}}
+    <header>
+        <h1>Goodie Foodie Reviews</h1>
+        <nav>
+          <a href="/">homepage</a>
+            {{#if loggedIn}}
+            <a href="/review">My Reviews</a> <!--GET logged in User's reviews-->
+            <a href="/reviewboard/create">Create New Review</a> <!--POST new review -->
+            <button id="logout">Sign Out</button>
+            {{else}}
+            <a href="/">homepage</a>
+            <a href="/login" class="login-button">login</a>
+            {{/if}}
+        </nav>
+    </header>
+   <main>
+    {{{ body }}}
+    </main>
   </body>
 
 </html>
