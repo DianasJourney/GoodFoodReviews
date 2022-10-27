@@ -10,6 +10,13 @@ User.hasMany(Review, {
     foreignKey: 'user_id'
 });
 
+Comment.belongsTo(Review, {
+    foreignKey: 'review_id'
+});
+
+Review.hasMany(Comment, {
+    foreignKey: 'review_id'
+})
 
 Review.belongsTo(User, {
     foreignKey: 'user_id',

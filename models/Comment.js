@@ -11,14 +11,20 @@ Comment.init(
             allowNull: false,
             autoIncrement: true
         },
-        userId: {
+        user_id: {
             type: DataTypes.INTEGER,
-            references: { model: 'user', key: 'id'}
+            references: { model: 'user', key: 'id' }
         },
         body: {
             type: DataTypes.TEXT,
             allowNull: false
-        }
+        },
+        //this will belong to the user who wrote it for and will also belong to the review it is written on
+            review_id: {
+                type: DataTypes.INTEGER,
+                references: { model: 'review', key: 'id' }
+
+            }
     },
     {
         sequelize,
