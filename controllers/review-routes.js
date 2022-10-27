@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Review, Comment, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 //gets the single review by id
