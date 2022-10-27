@@ -3,7 +3,7 @@ const { User, Review, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET all Users and their Reviews and Comments
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try{
         const userData = await User.findAll({
             include: [Review, Comment],
