@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 //updating our posted review
 router.put('/:id', withAuth, async (req, res) => {
     try{
-        const reviewPost = await Review.update(req.description, {
+        const reviewPost = await Review.update(req.body, {
             where: {
                 id: req.params.id
             }
