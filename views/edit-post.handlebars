@@ -1,0 +1,20 @@
+<article>
+  <a href="/reviewboard"> &larr; Back</a>
+  <h2 >Edit Review</h2>
+
+  <form class="edit-review-form">
+    <div>
+        <h2 for="review-title">Review Title:</h2>
+      <input class="input" name="review-title" type="text" value="{{review.title}}" />
+    </div>
+    <div>
+        <h2 for="review-description">Review Description:</h2>
+      <input class="textarea" name="review-description" type="text" value="{{review.description}}" />
+    </div>
+    <button type="submit" class="submitButton">Save Review</button>
+    <button type="button" class="deleteButton">Delete Review</button>
+  </form>
+</article>
+
+<script src="/javascript/edit.js"></script>
+<script src="/javascript/delete.js"></script>
