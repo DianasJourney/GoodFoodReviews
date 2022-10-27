@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Review, Comment, User } = require('../models');
+const { Review, User } = require('../models');
 
 //Get all reviews for homepage
 router.get('/', async (req, res) => {
