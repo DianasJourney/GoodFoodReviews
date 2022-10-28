@@ -71,26 +71,4 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-//GET all reviews by single user
-router.get('/', async (req, res) => {
-  try{
-      const reviewData = await Review.findAll({
-        where: {
-          user_id: req.session.user_id,
-        },
-          include: [User, {
-              model: Comment,
-              include: [User]
-          }
-      ]
-      })
-      const review = reviewData.get({ plain: true });
-      res.render('reviewboard', { review, loggedIn: req.session.loggedIn });
-  }
-   catch(err) {
-      res.status(500).json(err);
-  }
-});
-
-
 module.exports = router;
