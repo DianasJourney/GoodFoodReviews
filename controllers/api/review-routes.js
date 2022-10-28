@@ -4,8 +4,10 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     try{
-        const description = req.description;
-        const newReview = await Review.create({...description, user_id })
+        const newReview = await Review.create({ 
+          title: req.body.title, 
+          description: req.body.description, 
+          user_id: req.body.user_id, })
         res.json(newReview);
     }
     catch(err) {
@@ -54,21 +56,39 @@ router.delete('/:id', withAuth, async (req, res) => {
 })
 
 //gets the single review by id
-router.get('/:id', async (req, res) => {
-    try{
-        const reviewData = await Review.findByPk(req.params.id, {
-            include: [User, {
-                model: Comment,
-                include: [User]
-            }
-        ]
-        })
-        const review = reviewData.get({ plain: true });
-        res.render('single-review', { review, loggedIn: req.session.loggedIn });
-    }
-     catch(err) {
-        res.status(500).json(err);
-    }
-});
+// router.get('/:id', async (req, res) => {
+//     try{
+//         const reviewData = await Review.findByPk(req.params.id, {
+//             include: [User, {
+//                 model: Comment,
+//                 include: [User]
+//             }
+//         ]
+//         })
+//         const review = reviewData.get({ plain: true });
+//         res.render('single-review', { review, loggedIn: req.session.loggedIn });
+//     }
+//      catch(err) {
+//         res.status(500).json(err);
+//     }
+// });
+
+// router.get('/:id', async (req, res) => {
+//   try {
+//     const userData = await User.findOne({
+//       attributes: { exclude: ['password'] }, //get everything but the password fields
+//       where: {
+//         id: req.params.id
+//       },
+//       include: [Review]
+//     })
+
+//     const user = userData.get({ plain: true })
+//     res.status(200).json(user) // rendering to ?
+//   } catch (err) {
+//     res.status(500).json(err)
+//   }
+// });
+
 
 module.exports = router;
