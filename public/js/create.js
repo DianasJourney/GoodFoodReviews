@@ -1,20 +1,19 @@
 async function newFormHandler(event) {
     event.preventDefault();
-  
+  console.log("hey")
     const title = document.querySelector('input[name="review-title"]').value;
-    const review_description = document.querySelector('input[name="review-description"]').value;
-  console.log('hi')
+    const description = document.querySelector('input[name="review-description"]').value;
     const response = await fetch(`/api/review`, {
       method: 'POST',
       body: JSON.stringify({
         title,
-        review_description
+        description
       }),
       headers: {
         'Content-Type': 'application/json'
       }
-    });
-  
+    })
+  // console.log(response)
     if (response.ok) {
       document.location.replace('/reviewboard');
     } else {
@@ -22,4 +21,6 @@ async function newFormHandler(event) {
     }
   }
   
-  document.querySelector('.new-review-form').addEventListener('submit', newFormHandler);
+  document
+  .querySelector('.new-review-form')
+  .addEventListener('submit', newFormHandler);

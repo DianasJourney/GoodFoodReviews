@@ -19,20 +19,18 @@
     <header class="hero">
         <h1 class="app-title"><a href="/reviewboard">Your Review Board</a></h1>
     </header>
-
+<button type="submit" class="submitButton">Create Review</button>
     <main>
-        <form class="new-review-form">
+        {{#each review as |review|}}
             <div>
                 <h2 for="review-title">Review Title:</h2>
-                <input class="input" name="review-title" type="text" value="{{review.title}}" />
+                <h1>{{review.title}}</h1>
             </div>
             <div>
                 <h2 for="review-description">Review Description:</h2>
-                <input class="textarea" name="review-description" type="text" value="{{review.description}}" />
+                <h1>{{review.description}}</h1>
             </div>
-            <button type="submit" class="submitButton">Create Review</button>
-            {{!-- <button type="button" class="deleteButton">Delete Review</button> --}}
-        </form>
+            {{/each}}
     </main>
 </body>
 

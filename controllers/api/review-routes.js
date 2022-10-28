@@ -1,14 +1,18 @@
 const router = require('express').Router();
-const { Review, Comment } = require('../../models');
+const { Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
+  console.log('hello')
     try{
+      console.log(req.session)
+
         const newReview = await Review.create({ 
           title: req.body.title, 
           description: req.body.description, 
-          user_id: req.body.user_id, })
-        res.json(newReview);
+          user_id: req.session.user_id, })
+          console.log(newReview.get({plain: true}))
+        res.status(200).json(newReview.get({plain: true}));
     }
     catch(err) {
         res.status(500).json(err);
