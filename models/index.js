@@ -1,6 +1,11 @@
 const User = require('./User');
 const Review = require('./Review');
 const Comment = require('./Comment');
+/**
+ * 1 user has many reviews
+ * 1 review has one user and many comments
+ * 1 comment belongs to 1 review and one user
+ */
 
 User.hasMany(Comment, {
     foreignKey: 'user_id'
