@@ -1,4 +1,4 @@
-const { Model, DataTypes, INTEGER } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
 class Review extends Model {}
@@ -18,19 +18,11 @@ Review.init(
         description: {
             type: DataTypes.TEXT,
             allowNull: false
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references : {
-                model: "user",
-                id: "id"
-            }
-        },
+        }
     },
     {
         sequelize,
         freezeTableName: true,
-        underscored: true,
         modelName: 'review'
 }
 );
