@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Review } = require('../models')
+const { Review, User } = require('../models')
 const withAuth = require('../utils/auth')
 
 //gets our review in our review dashboard
@@ -10,12 +10,12 @@ router.get('/', async (req, res) => {
         user_id: req.session.user_id
       }
     })
-    const review = reviewData.map(review => post.get({ plain: true }))
+    const review = reviewData.map(review => review.get({ plain: true }))
     res.render('reviewboard', { review, loggedIn: req.session.loggedIn })
   } catch (err) {
     res.status(500).json(err)
   }
-})
+});
 
 router.get('/create', withAuth, (req, res) => {
   res.render('create-post', {
