@@ -3,28 +3,30 @@
         <div>
             <h2>{{review.title}}</h2>
             <div>
-                Posted by {{review.User.name}} on {{format_date post.createdAt}}
+                Posted by {{review.user.name}}
+                 {{!-- on {{format_date post.createdAt}} --}}
             </div>
         </div>
         <div>
-            {{review.body}}
+            {{review.description}}
         </div>
     </article>
 
-    {{#if review.Comments}}
+    {{#if review.comments}}
     <section>
         <div>
             <h4>Comments</h4>
         </div>
 
         <div>
-            {{#each review.comment}}
+            {{#each review.comments as |comment|}}
             <div>
                 <p>
-                    {{body}}
+                    {{comment.body}}
                 </p>
                 <p>
-                    &mdash; {{User.name}}, {{format_date createdAt}}
+                    &mdash; {{comment.user.name}}
+                    {{!-- , {{format_date createdAt}} --}}
                 </p>
             </div>
             {{/each}}
@@ -32,7 +34,7 @@
     </section>
     {{/if}}
 
-<form id="new-comment-form" class="card">
+{{!-- <form id="new-comment-form" class="card">
     <div class="card-header">
         <h3>Add a New Comment</h3>
     </div>
@@ -47,6 +49,6 @@
         <button type="submit" class="btn">Submit</button>
     </div>
 </form>
-</div>
+</div> --}}
 
 <script src="/js/comment.js"></script>
