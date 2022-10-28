@@ -5,40 +5,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goodie Foodie's Review</title>
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body class="flex-column min-100-vh">
-    <nav class="navbar">
-        <ul class="flex-row">
-            <li class="li-inline nav-item"><a href="/">Home</a></li>
-            <li class="li-inline nav-item"><a href="/reviewboard">Review Board</a></li>
-            <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/reviewboard">Review Board</a></li>
+            <li><a href="#" id="logout-link">Logout</a></li>
         </ul>
     </nav>
     <header class="hero">
         <h1 class="app-title"><a href="/reviewboard">Your Review Board</a></h1>
     </header>
-
-    <main class="col-auto">
-        <form class="new-review-form">
+<button type="submit" class="submitButton">Create Review</button>
+    <main>
+        {{#each review as |review|}}
             <div>
                 <h2 for="review-title">Review Title:</h2>
-                <input class="input" name="review-title" type="text" value="{{review.title}}" />
+                <h1>{{review.title}}</h1>
             </div>
             <div>
                 <h2 for="review-description">Review Description:</h2>
-                <input class="textarea" name="review-description" type="text" value="{{review.description}}" />
+                <h1>{{review.description}}</h1>
             </div>
-            <button type="submit" class="submitButton">Create Review</button>
-            {{!-- <button type="button" class="deleteButton">Delete Review</button> --}}
-        </form>
+            {{/each}}
     </main>
 </body>
 
 <script src="/js/logout.js"></script>
 <script src="/js/edit.js"></script>
 <script src="/js/delete.js"></script>
+<script src="/js/create.js"></script>
 
 </html>
