@@ -57,6 +57,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 })
 
+//finds our single review by id
 router.get('/:id', async (req, res) => {
   try {
     const reviewData = await Review.findByPk(req.params.id, {
