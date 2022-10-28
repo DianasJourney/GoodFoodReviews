@@ -42,12 +42,11 @@ router.post('/', async (req, res) => {
       email: req.body.email,
       password: req.body.password
     })
-
-    const saveSess = req.session.save(() => {
-      req.session.id = userData.id
-      req.session.name = userData.name
+    req.session.save(() => {
+      req.session.user_id = userData.dataValues.id
+      req.session.name = userData.dataValues.name
       req.session.loggedIn = true
-      res.json(saveSess)
+      res.json({ user: userData, message: 'You are now signed up!' })
     })
   } catch (err) {
     res.status(500).json(err)
