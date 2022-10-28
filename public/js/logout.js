@@ -8,7 +8,7 @@ const logout = async function () {
     throw new Error('HTTP error: ' + response.status)
   }
 
-  document.location.replace('/reviewboard')
+  document.location.replace('/')
 }
 
 document.querySelector('#logout-link').addEventListener('click', logout)
