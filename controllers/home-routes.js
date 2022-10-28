@@ -6,8 +6,8 @@ router.get('/', async (req, res) => {
     try{
         const reviewData = await Review.findAll({
             include: [User]
-        })
-        const reviews = reviewData.map((review) => post.get({ plain: true}));
+        });
+        const reviews = reviewData.map((review) => review.get({ plain: true}));
         res.render('homepage', { reviews, loggedIn: req.session.loggedIn })
     }
     catch(err) {
