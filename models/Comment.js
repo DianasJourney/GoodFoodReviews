@@ -20,16 +20,18 @@ Comment.init(
             allowNull: false
         },
         //this will belong to the user who wrote it for and will also belong to the review it is written on
-        review_id: {
-            type: DataTypes.INTEGER,
-            references: { model: 'review', key: 'id' }
-        },
+            review_id: {
+                type: DataTypes.INTEGER,
+                references: { model: 'review', key: 'id' }
+
+            }
     },
     {
         sequelize,
         freezeTableName: true,
         underscored:true,
         modelName: 'comment'
+
     }
 );
 
