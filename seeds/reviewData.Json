@@ -2,18 +2,18 @@
   {
     "title": "Diana review 1",
     "description": "Review 1 desc",
-    "user_id" : 1
+    "user_id" : 2
   },    
   {
     "title": "Diana review 2",
     "description": "Review 2 desc",
-    "user_id" : 1
+    "user_id" : 2
   },
   
   {
     "title": "Dylan Review 1",
     "description": "Review 1 desc",
-    "user_id" : 2
+    "user_id" : 1
   },
   {
     "title": "Mimi review 1",
