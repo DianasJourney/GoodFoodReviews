@@ -3,8 +3,8 @@ async function newFormHandler(event) {
   
     const title = document.querySelector('input[name="review-title"]').value;
     const review_description = document.querySelector('input[name="review-description"]').value;
-  
-    const response = await fetch(`/api/reviews`, {
+  console.log('hi')
+    const response = await fetch(`/api/review`, {
       method: 'POST',
       body: JSON.stringify({
         title,
