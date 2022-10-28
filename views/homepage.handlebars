@@ -1,17 +1,12 @@
-{{!-- <div class="review">
-    {{#each review}}
-    <article>
-        <div >
-            <h2>
-                <a href="/review/{{id}}">{{title}}</a>
-            </h2>
-            <div>
-                Posted by {{User.name}} on {{format_date createdAt}}
-            </div>
+<div>
+    {{#each reviews as |review|}}
+        <div>
+            <h2 for="review-title">Review Title:</h2>
+            <h1>{{review.title}}</h1>
         </div>
         <div>
-            {{body}}
+            <h2 for="review-description">Review Description:</h2>
+            <h1>{{review.description}}</h1>
         </div>
-    </article>
-    {{/each}}
-</div> --}}
+{{/each}}
+</div>

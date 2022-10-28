@@ -10,12 +10,14 @@ router.get('/', async (req, res) => {
         user_id: req.session.user_id
       }
     })
-    const review = reviewData.map(review => review.get({ plain: true }))
-    res.render('reviewboard', { review, loggedIn: req.session.loggedIn })
+
+    const reviews = reviewData.map(review => review.get({ plain: true }))
+
+    res.render('reviewboard', { reviews, loggedIn: req.session.loggedIn })
   } catch (err) {
     res.status(500).json(err)
   }
-});
+})
 
 router.get('/create', withAuth, (req, res) => {
   res.render('create-post', {
