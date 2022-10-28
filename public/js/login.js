@@ -6,7 +6,7 @@ const loginFormHandler = async function (event) {
   const response = await fetch('/api/user/login', {
     method: 'post',
     body: JSON.stringify({
-      username: usernameEl.value,
+      email: usernameEl.value,
       password: passwordEl.value
     }),
     headers: { 'Content-Type': 'application/json' }
@@ -15,7 +15,7 @@ const loginFormHandler = async function (event) {
   if (!response.ok) {
     throw new Error('HTTP error: ' + response.status)
   }
-  document.location.replace('/reviewboard')
+  document.location.replace('/reviewboard/')
 }
 
 document
