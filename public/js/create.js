@@ -14,9 +14,6 @@ async function newFormHandler(event) {
         'Content-Type': 'application/json'
       }
     });
-  
-    console.log('create.js req');
-    console.log(response.body);
 
     if (response.ok) {
       document.location.replace('/reviewboard');
