@@ -25,6 +25,10 @@
                 <h2 for="review-description">Review Description:</h2>
                 <h1>{{review.description}}</h1>
             </div>
+            
+        <a href="/api/review/{{review.id}}">
+        <button class="readReview">Read Review</button>
+        </a>
             {{/each}}
     </main>
 </body>
