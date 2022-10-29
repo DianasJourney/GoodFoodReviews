@@ -12,7 +12,9 @@
     <header class="hero">
         <h1 class="app-title"><a href="/reviewboard">Your Review Board</a></h1>
     </header>
-<button type="submit" class="submitButton">Create Review</button>
+    <a href="/reviewboard/create"><button class="create-new-review">Create New Review</button>
+    </a>
+    
     <main>
         {{#each reviews as |review|}}
             <div>
@@ -28,8 +30,5 @@
 </body>
 
 <script src="/js/logout.js"></script>
-<script src="/js/edit.js"></script>
-<script src="/js/delete.js"></script>
-<script src="/js/create.js"></script>
 
 </html>
