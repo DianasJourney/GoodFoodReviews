@@ -2,10 +2,11 @@ const router = require('express').Router()
 const { User, Comment, Review } = require('../../models')
 const withAuth = require('../../utils/auth')
 
-router.post('/', withAuth, async (req, res) => {
-  console.log('hello')
+//withAuth out
+router.post('/', async (req, res) => {
+  console.log('router.post / reached')
   try {
-    console.log(req.session)
+    //console.log(req.session)
 
     const newReview = await Review.create({
       title: req.body.title,

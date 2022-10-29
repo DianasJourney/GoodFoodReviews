@@ -3,7 +3,7 @@ const { Review, User } = require('../models')
 const withAuth = require('../utils/auth')
 
 //gets our review in our review dashboard
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const reviewData = await Review.findAll({
       where: {
@@ -20,8 +20,9 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/create', withAuth, (req, res) => {
+  console.log('reviewboard.get /create reached');
   res.render('create-post', {
-    layout: 'reviewboard'
+    layout: 'main'
   })
 })
 
