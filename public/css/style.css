@@ -1,0 +1,139 @@
+
+:root{
+    --font: 21px;
+    --font-weight: bolder;
+}
+
+
+nav{
+    text-align: center;
+}
+.signin-bg {
+    background-image: url('/images/homepagefoodbg.jpg');
+    background-size: cover;
+    background-repeat: none;
+}
+
+.custom-loginsignupbox {
+    width: 60%;
+    text-align: center;
+}
+
+#custom-border{
+background-color: rgb(212, 211, 211);
+position: relative;
+left: 34%;
+margin-top: 17%;
+opacity: 90%;
+}
+
+#login-btn{
+    margin-bottom: 1%;
+}
+
+.custom-create {
+    margin-top: 2%;
+}
+
+.signup-btn{
+    padding: 0;
+    position: relative;
+    bottom: 6%;
+    margin-bottom: 1%;
+
+}
+
+.custom-email {
+ font-weight: var(--font-weight);
+ font-size: var(--font);
+ text-align: center;
+ margin-bottom: 1%;
+}
+
+.custom-password{
+    font-weight: var(--font-weight);
+    font-size: var(--font);
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.custom-logintitle{
+    padding: 10px;
+    margin-bottom: 3.5%;
+    margin-top: 2%;
+}
+
+#custom-linespace{
+    padding: 2%;
+}
+
+.custom-inputemail{
+    width: 50%;
+    padding: 2px;
+    margin-top: 2px;
+    margin-bottom: 1%;
+}
+
+.custom-passinput{
+    width: 52%;
+    padding: 2px;
+    margin-top: 2px;
+    position: relative;
+    right: %;
+    background-color: white;
+}
+
+.custom-create{
+    font-size: 20px;
+    margin: 0;
+    font-weight: bolder;
+}
+
+#custom-signuppass{
+    width: 50%;
+    padding: 2px;
+    margin-top: 2px;
+    margin-bottom: 1%;
+
+}
+
+#custom-signupinput{
+   font-weight: var(--font-weight);
+    font-size: var(--font);
+    text-align: center;
+}
+
+#custom-name{
+    font-weight: var(--font-weight);
+    font-size: var(--font);
+    text-align: center;
+}
+
+#custom-nameinput{
+    width: 50%;
+    padding: 2px;
+    margin-top: 2px;
+    margin-bottom: 1%;
+}
+
+#custom-createtitle{
+    padding: 0;
+    margin-bottom: 2%;
+    font-size: 25px;
+}
+
+#custom-logdescript{
+    margin-top: 1%;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#signup-btn{
+    margin-top: .5%;
+}
+
+#custom-signuptitle{
+     padding: 10px;
+     margin-top: 1%;
+
+}
