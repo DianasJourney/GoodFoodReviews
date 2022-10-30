@@ -51,35 +51,52 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 // //deleting any of our reviews
-router.delete('/:id', withAuth, async (req, res) => {
-  console.log(res);
-  console.log('gets to router.delete destroy');
-  console.log(req.body.id, req.session.user_id);
-  try {
-    const review = await Review.destroy({
-      where: {
-        id: req.body.id,
-        user_id: req.session.user_id, //redundant, but double-checks that user trying to delete review is the user who made it
-      },
-    });
+// router.delete('/:id', withAuth, async (req, res) => {
+//   try {
+//     const review = await Review.destroy({
+//       where: {
+//         id: req.body.id,
+//         user_id: req.session.user_id, //redundant, but double-checks that user trying to delete review is the user who made it
+//       },
+//     });
     
 
-    if (!review) {
-      res.status(404).json(err);
-      console.log('review does not exist');
-      return;
-    }
-    console.log('review found');
-    res.status(200).json(review);
+//     if (!review) {
+//       res.status(404).json(err);
+//       console.log('review does not exist');
+//       return;
+//     }
+//     console.log('review found');
+//     res.status(200).json(review);
     
-    // if (review > 0) {
+//     // if (review > 0) {
        
-    // } else {
-    //   res.status(404).json({ message: 'No review found with this id!' })
-    // }
-  } catch (err) {
-    res.status(500).json(err)
-  }
+//     // } else {
+//     //   res.status(404).json({ message: 'No review found with this id!' })
+//     // }
+//   } catch (err) {
+//     res.status(500).json(err)
+//   }
+// });
+
+router.delete('/:id', withAuth, (req, res) => {
+  Review.destroy({ include: [{ model: Comment}],
+    where: {
+      id: req.params.id,
+      //review_id: req.params.id,
+    }
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 //finds our single review by id

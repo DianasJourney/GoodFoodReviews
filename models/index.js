@@ -3,7 +3,8 @@ const Review = require('./Review');
 const Comment = require('./Comment');
 
 User.hasMany(Comment, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 User.hasMany(Review, {
@@ -12,19 +13,23 @@ User.hasMany(Review, {
 });
 
 Comment.belongsTo(Review, {
-    foreignKey: 'review_id'
+    foreignKey: 'review_id',
+    onDelete: 'CASCADE'
 });
 
 Review.hasMany(Comment, {
-    foreignKey: 'review_id'
+    foreignKey: 'review_id',
+    onDelete: 'CASCADE'
 })
 
 Review.belongsTo(User, {
     foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 Comment.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 module.exports = {
