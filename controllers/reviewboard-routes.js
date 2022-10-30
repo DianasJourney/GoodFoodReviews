@@ -2,7 +2,7 @@ const router = require('express').Router()
 const { Review, User } = require('../models')
 const withAuth = require('../utils/auth')
 
-//gets our review in our review dashboard
+//gets all of logged in users reviews in our review dashboard
 router.get('/', withAuth, async (req, res) => {
   try {
     const reviewData = await Review.findAll({
@@ -26,14 +26,15 @@ router.get('/create', withAuth, (req, res) => {
   })
 })
 
+//make below async, not a Promise?
 router.get('/edit/:id', withAuth, (req, res) => {
-  Post.findByPk(req.params.id)
+  Review.findByPk(req.params.id)
     .then(dbPostData => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true })
 
         res.render('edit-post', {
-          layout: 'reviewboard',
+          layout: 'main',
           post
         })
       } else {
@@ -43,6 +44,27 @@ router.get('/edit/:id', withAuth, (req, res) => {
     .catch(err => {
       res.status(500).json(err)
     })
-})
+});
+
+//make below async, not a Promise?
+router.get('/delete/:id', withAuth, async (req, res) => {
+  console.log('router get delete reached')
+  Review.findByPk(req.body.id)
+    .then(dbPostData => {
+      if (dbPostData) {
+        const post = dbPostData.get({ plain: true })
+
+        res.render('delete-post', {
+          layout: 'main',
+          post
+        })
+      } else {
+        res.status(404).end()
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err)
+    })
+});
 
 module.exports = router
