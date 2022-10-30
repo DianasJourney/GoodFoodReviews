@@ -12,8 +12,8 @@ Review.init(
             autoIncrement: true
         },
         title: {
-        type: DataTypes.STRING,
-        allowNull: false,
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         description: {
             type: DataTypes.TEXT,
