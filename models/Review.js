@@ -23,6 +23,10 @@ Review.init(
             type: DataTypes.INTEGER,
             references: { model: 'user', key: 'id' }
         },
+        img: {
+            type: DataTypes.TEXT, 
+            allowNull: false,
+        },
     },
     {
         sequelize,

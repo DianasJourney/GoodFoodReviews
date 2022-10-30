@@ -2,16 +2,17 @@ async function editFormHandler(event) {
     event.preventDefault();
   
     const title = document.querySelector('input[name="review-title"]').value;
-    const review_description = document.querySelector('input[name="review-description"]').value;
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-      ];
+    const description = document.querySelector('input[name="review-description"]').value;
+    const img = document.querySelector('input[name="review-image"]').value;
 
-    const response = await fetch(`/api/reviews/${id}`, {
+    const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+
+    const response = await fetch(`/api/review/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,
-            review_description
+            description,
+            img
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -25,4 +26,4 @@ async function editFormHandler(event) {
       }
   }
   
-  document.querySelector('.edit-review-form').addEventListener('submit', editFormHandler);
+  document.querySelector('.editReview').addEventListener('click', editFormHandler);

@@ -1,0 +1,22 @@
+<article>
+  <a href="/reviewboard"> &larr; Back</a>
+  <h2 >Delete Review</h2>
+
+  <form class="delete-review-form">
+    <div>
+        <h2 for="review-title">Review Title:</h2>
+      <h2>{{review.title}}</h2>
+    </div>
+    <div>
+        <h2 for="review-description">Review Description:</h2>
+      <p>{{review.description}}</p> 
+    </div>
+    <div>
+      <h2 for="review-image">Image Link:</h2>
+      <img src="{{review.img}}"/>
+    </div>
+    <button class="deleteReview">Delete Review</button>
+  </form>
+</article>
+
+<script src="/js/delete.js"></script>

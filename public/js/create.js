@@ -3,18 +3,20 @@ async function newFormHandler(event) {
   
     const title = document.querySelector('input[name="review-title"]').value;
     const description = document.querySelector('input[name="review-description"]').value;
-  
-    const response = await fetch(`/api/review`, {
+    const img = document.querySelector('input[name="review-image"]').value;
+
+      const response = await fetch(`/api/review`, {
       method: 'POST',
       body: JSON.stringify({
         title,
-        description
+        description,
+        img
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     });
-
+    
     if (response.ok) {
       document.location.replace('/reviewboard');
     } else {

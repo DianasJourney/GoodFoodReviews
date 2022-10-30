@@ -11,10 +11,12 @@
         <h2 for="review-description">Review Description:</h2>
       <input class="textarea" name="review-description" type="text" value="{{review.description}}" />
     </div>
-    <button type="submit" class="submitButton">Save Review</button>
-    <button type="button" class="deleteButton">Delete Review</button>
+    <div>
+      <h2 for="review-image">Image Link:</h2>
+      <input class="input" type="text" id="review-description" name="review-image" value="{{review.img}}"/>
+    </div>
+    <button class="editReview">Update Review</button>
   </form>
 </article>
 
-<script src="/public/js/edit.js"></script>
-<script src="/public/js/delete.js"></script>
+<script src="/js/edit.js"></script>
