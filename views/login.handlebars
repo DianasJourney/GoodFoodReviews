@@ -1,23 +1,25 @@
-<section class="card">
-    <section class="card-header">
-        <h2>Welcome to Goodie Foodie's Review</h2>
-        <h3>Please Login</h3>
-    </section>
-    <form id="login-form" class="card-body">
-        <div>
-            <label for="username-input-login">Email</label>
-            <input type="text" id="username-input-login" placeholder="Enter your email"/>
+<body class="signin-bg">
+<div class="custom-loginsignupbox" class="two column stackable ui grid">
+    <div class="column">
+        <div id='custom-border' class="ui segment">
+            <h2 class="custom-logintitle">Welcome to Goodie Foodie's Review 😋</h2>
+        <form id="login-form" class="card-body">
+            <div>
+                <div class='custom-email' for="username-input-login">Email</div>
+                <input class='custom-inputemail' type="text" id="username-input-login" placeholder="Enter your email" />
+            </div>
+            <div id="custom-linespace">
+                <div class="custom-password" for="password-input-login" class="form-label">Password</div>
+                <input class='custom-passinput' type="password" id="password-input-login" placeholder="Enter your password" />
+            </div>
+            <button type="submit" id="login-btn" class="btn">Login</button>
+            <p class="custom-create">Don't have an account? Sign up!</p>
+            <a class="signup-btn" type="button" href="/signup">Sign up</a>
+        </form>
+                    
         </div>
-        <div>
-            <label for="password-input-login" class="form-label">Password</label>
-            <input type="password" id="password-input-login" placeholder="Enter your password"/>
-        </div>
-        <button type="submit" id="login-btn" class="btn">Login</button>
-        <p class="custom-create">Create an account</p>
-        <a type="button" href="/signup">Sign up</a>
-    </form>
-</section>
-
-
-<script src="/js/signup.js"></script>
-<script src="/js/login.js"></script>
+    </div>
+    
+    <script src="/js/signup.js"></script>
+    <script src="/js/login.js"></script>
+</body>
