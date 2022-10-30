@@ -3,8 +3,7 @@ const { User, Comment, Review } = require('../../models')
 const withAuth = require('../../utils/auth')
 // New library - used to determine if a URL leads to an image
 // Npm link: https://www.npmjs.com/package/image-url-validator
-const isImageURL = require('image-url-validator').default;
-
+const isImageURL = require('image-url-validator').default
 
 //withAuth out
 router.post('/', async (req, res) => {
@@ -22,65 +21,65 @@ router.post('/', async (req, res) => {
     } catch (err) {
       res.status(500).json(err)
     }
+  } else {
+    console.log('Not an image link!')
   }
-  else {
-     console.log('Not an image link!');
-    }
 })
 
 //updating our posted review
 router.put('/:id', withAuth, async (req, res) => {
   if (await isImageURL(req.body.img)) {
-  try {
-    const reviewPost = await Review.update(req.body, {
-      where: {
-        id: req.params.id
+    try {
+      const reviewPost = await Review.update(req.body, {
+        where: {
+          id: req.params.id
+        }
+      })
+      if (reviewPost > 0) {
+        res.status(200).end()
+      } else {
+        res.status(400).end()
       }
-    })
-    if (reviewPost > 0) {
-      res.status(200).end()
-    } else {
-      res.status(400).end()
+    } catch (err) {
+      res.status(500).json(err)
     }
-  } catch (err) {
-    res.status(500).json(err)
-  } }
-  else {
-     console.log('Not an image link!');
-    }
-});
+  } else {
+    console.log('Not an image link!')
+  }
+})
 
 // //deleting any of our reviews
 router.delete('/:id', withAuth, async (req, res) => {
-  console.log(res);
-  console.log('gets to router.delete destroy');
-  console.log(req.body.id, req.session.user_id);
+  console.log(res)
+  console.log('gets to router.delete destroy')
+  console.log(req.body.id, req.session.user_id)
   try {
+    console.log('deleting in 3 2 1')
     const review = await Review.destroy({
       where: {
-        id: req.body.id,
-        user_id: req.session.user_id, //redundant, but double-checks that user trying to delete review is the user who made it
-      },
-    });
-    
+        id: req.body.id //redundant, but double-checks that user trying to delete review is the user who made it
+      }
+    })
+    console.log('goodbye')
+    console.log(review)
 
     if (!review) {
-      res.status(404).json(err);
-      console.log('review does not exist');
-      return;
+      res.status(404).json(err)
+      console.log('review does not exist')
+      return
     }
-    console.log('review found');
-    res.status(200).json(review);
-    
+    console.log('review found')
+    res.status(200).json(review)
+
     // if (review > 0) {
-       
+
     // } else {
     //   res.status(404).json({ message: 'No review found with this id!' })
     // }
   } catch (err) {
     res.status(500).json(err)
   }
-});
+})
 
 //finds our single review by id
 router.get('/:id', async (req, res) => {
@@ -109,7 +108,7 @@ router.get('/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-});
+})
 
 //GET single review in prep to edit
 router.get('/edit/:id', async (req, res) => {
@@ -138,7 +137,7 @@ router.get('/edit/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-});
+})
 
 //GET single review in prep to delete
 router.get('/delete/:id', async (req, res) => {
@@ -156,8 +155,8 @@ router.get('/delete/:id', async (req, res) => {
               model: User,
               attributes: { exclude: ['password', 'email'] }
             }
-          ],
-        },
+          ]
+        }
       ]
     })
 
@@ -167,6 +166,6 @@ router.get('/delete/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-});
+})
 
 module.exports = router
