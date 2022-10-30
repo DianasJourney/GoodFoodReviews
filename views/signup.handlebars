@@ -1,26 +1,30 @@
-<div class="card">
-    <div class="card-header">
-        <h2>Welcome to Goodie Foodie's Review</h2>
-        <h3>Create an Account</h3>
-    </div>
-    <div id="signup" role="tabpanel">
-        <form id="signup-form" class="card-body">
+<body class="signin-bg">
+<div class="custom-loginsignupbox" class="two column stackable ui grid">
+    <div class="column">
+        <div id='custom-border' class="ui segment">
+        <h2 id="custom-signuptitle">Welcome to Goodie Foodie's Review 😛</h2>
+        <h3 id="custom-createtitle">Create an Account</h3>
+        <form>
             <div>
-                <label for="name-input-signup">Name</label>
-                <input type="text" id="name-input-signup" placeholder="Enter your name" />
+                <div id='custom-name' for="name-input-signup">Name</div>
+                <input id='custom-nameinput' type="text" id="name-input-signup" placeholder="Enter your name" />
             </div>
             <div>
-                <label for="username-input-signup">Email</label>
-                <input type="text" id="username-input-signup" placeholder="Enter your email" />
+                <div class='custom-email' for="username-input-signup">Email</div>
+                <input class='custom-inputemail' type="text" id="username-input-signup" placeholder="Enter your email" />
             </div>
             <div>
-                <label for="password-input-signup">Password</label>
-                <input type="password" id="password-input-signup" placeholder="Enter your password" />
+                <div id='custom-signupinput' for="password-input-signup">Password</div>
+                <input id="custom-signuppass" type="password" id="password-input-signup" placeholder="Enter your password" />
             </div>
             <button type="submit" id="signup-btn" class="btn">Signup</button>
+            <p id="custom-logdescript">Have an account? Login instead.</p>
             <a class="custom-loginbtn" href="/login">Login</a>
+        
         </form>
-    </div>
-</div>
-
-<script src="/js/signup.js"></script>
+        </div>
+        </div>
+    
+    <script src="/js/signup.js"></script>
+</body>
+       
