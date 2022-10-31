@@ -22,7 +22,6 @@ router.post('/', async (req, res) => {
       res.status(500).json(err)
     }
   } else {
-    //replace with return response
     console.log('Not an image link!')
   }
 })
@@ -45,7 +44,6 @@ router.put('/:id', withAuth, async (req, res) => {
       res.status(500).json(err)
     }
   } else {
-    //replace with return response
     console.log('Not an image link!')
   }
 })
@@ -53,16 +51,12 @@ router.put('/:id', withAuth, async (req, res) => {
 // //deleting any of our reviews
 router.delete('/:id', withAuth, async (req, res) => {
   try {
+    console.log('deleting in 3 2 1')
     const review = await Review.destroy({
       where: {
         id: req.body.id //redundant, but double-checks that user trying to delete review is the user who made it
       }
     })
-
-    if (!review) {
-      res.status(404).json(err)
-      return
-    }
     res.status(200).json(review)
 
     // if (review > 0) {

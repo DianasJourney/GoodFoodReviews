@@ -79,7 +79,7 @@ opacity: 90%;
     padding: 2px;
     margin-top: 2px;
     position: relative;
-    right: %;
+    right: 0%;
     background-color: white;
 }
 
@@ -89,7 +89,7 @@ opacity: 90%;
     font-weight: bolder;
 }
 
-#custom-signuppass{
+.custom-signuppass{
     width: 50%;
     padding: 2px;
     margin-top: 2px;
@@ -109,7 +109,7 @@ opacity: 90%;
     text-align: center;
 }
 
-#custom-nameinput{
+.custom-nameinput{
     width: 50%;
     padding: 2px;
     margin-top: 2px;
@@ -136,4 +136,67 @@ opacity: 90%;
      padding: 10px;
      margin-top: 1%;
 
+}
+
+.homecard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.readReview:hover {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.review-image {
+    max-width: 20%;
+    min-width: 150px;
+    max-height: 20%;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 10px 18px;
+}
+
+.readReview {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: var(--secondary);
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #f5f5dc;
+    border-radius: 4px;
+    border-color: var(--secondary);
+}
+
+@media screen and (max-width: 1024px) {
+    .homecontainer{
+        --num-cols: 2;
+        --row-height: 55%;
+    }
+}
+
+#error-message{
+    background-color: red;
+    color: white;
+    border-style: solid black;
+    border-radius: 4px;
+    font-weight: bolder;
+    margin-bottom: 1%;
+    display: flex;
+    width: 165px;
+    justify-content: center;
+    position: relative;
+    left: 41%;
+}
+
+#error-message2{
+    background-color: red;
+    color: white;
 }

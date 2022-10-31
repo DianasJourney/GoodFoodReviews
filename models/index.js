@@ -3,7 +3,7 @@ const Review = require('./Review')
 const Comment = require('./Comment')
 
 User.hasMany(Comment, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
 })
 
 User.hasMany(Review, {
@@ -17,7 +17,7 @@ Comment.belongsTo(Review, {
 })
 
 Review.hasMany(Comment, {
-  foreignKey: 'review_id'
+  foreignKey: 'review_id',
 })
 
 Review.belongsTo(User, {
@@ -26,7 +26,7 @@ Review.belongsTo(User, {
 })
 
 Comment.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
 })
 
 module.exports = {
