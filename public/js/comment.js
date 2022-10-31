@@ -15,11 +15,10 @@ const commentFormHandler = async function (event) {
       headers: {
         'Content-Type': 'application/json'
       }
-    })
-
+    });
     document.location.reload();
   }
-}
+};
 
 document
   .querySelector('#new-comment-form')
