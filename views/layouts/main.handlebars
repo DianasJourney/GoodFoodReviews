@@ -13,39 +13,39 @@
 
             {{#if loggedIn}}
 
-<div class="ui secondary  menu">
+{{!-- <div class="ui secondary  menu">
   <a class="item" href="/">
     Home
   </a>
   <a class="item" href="/reviewboard">
     Review Board
   </a>
-  <a class="item" href="#">
+  <a class="item">
     Friends
   </a>
   <div class="right menu">
-    <a class="ui item active">
+    <a class="ui item active" href="#">
       Logout
     </a>
   </div>
-</div>
+</div> --}}
 
         <nav class="navigations">
           <div class="wrapper">
             <h1>Goodie Foodie Reviews</h1>
 
-          {{!-- <div class="homep">
+          <div class="homep">
             <a href="/">Homepage</a>
-          </div> --}}
+          </div>
 
             {{!-- {{#if loggedIn}} --}}
-            {{!-- <div class="createreview">
+            <div class="createreview">
               <a href="/reviewboard">Review Board</a>
-            </div> <!--POST new review --> --}}
+            </div> <!--POST new review -->
 
-            {{!-- <div class="log-out">
+            <div class="log-out">
               <a href="#" id="logout-link">Logout</a>
-            </div> --}}
+            </div>
 
             {{else}}
             <a href="/login" class="login-button">login</a>
