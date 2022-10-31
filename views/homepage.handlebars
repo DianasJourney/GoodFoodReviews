@@ -1,4 +1,3 @@
-<header>Goodie Foodie's Reviews</head>
 <div class="homecontainer">
     {{#each reviews as |review|}}
     <div class="homecard">
@@ -6,7 +5,7 @@
             <img class="review-image" src="{{review.img}}" alt="Review Image">
         </div>
         <div>
-            <h1>{{review.title}}</h1>
+            <h1 id="custom-revfont">{{review.title}}</h1>
             <h3>{{this.user.name}}</h3>
         </div>
         <div>
