@@ -1,3 +1,4 @@
+<header>Goodie Foodie's Reviews</head>
 <div class="homecontainer">
     {{#each reviews as |review|}}
     <div class="homecard">
@@ -5,12 +6,11 @@
             <img class="review-image" src="{{review.img}}" alt="Review Image">
         </div>
         <div>
-            <h2 for="review-title">Review Title:</h2>
             <h1>{{review.title}}</h1>
+            <h3>{{this.user.name}}</h3>
         </div>
         <div>
-            <h2 for="review-description">Review Description:</h2>
-            <h1>{{review.description}}</h1>
+            <p>{{review.description}}</p>
         </div>
         <a href="/api/review/{{review.id}}">
             <button class="readReview">Read Review</button>
