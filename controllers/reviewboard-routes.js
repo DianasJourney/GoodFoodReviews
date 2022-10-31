@@ -49,7 +49,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 //make below async, not a Promise?
 router.get('/delete/:id', withAuth, async (req, res) => {
   console.log('router get delete reached')
-  Review.findByPk(req.body.id)
+  Review.findByPk(req.params.id)
     .then(dbPostData => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true })

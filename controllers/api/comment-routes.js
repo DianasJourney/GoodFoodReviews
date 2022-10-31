@@ -3,8 +3,6 @@ const { Comment } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-    console.log('comment post route reached');
-    console.log(req.session.user_id,req.body.body,req.body.review_id);
     try{
         const newComment = await Comment.create({
             user_id: req.session.user_id,

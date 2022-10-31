@@ -33,7 +33,8 @@
         </div>
     </section>
     {{/if}}
-
+    
+{{#if loggedIn}}
 <form id="new-comment-form" class="card">
     <div class="card-header">
         <h3>Add a New Comment</h3>
@@ -50,5 +51,5 @@
     </div>
 </form>
 </div>
-
+{{/if}}
 <script src="/js/comment.js"></script>
