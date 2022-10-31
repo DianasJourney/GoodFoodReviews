@@ -1,19 +1,21 @@
-<div class="homecontainer">
-    {{#each reviews as |review|}}
-    <div class="homecard">
-        <div>
-            <img class="review-image" src="{{review.img}}" alt="Review Image">
+<body class="home-bg">
+    <div class="homecontainer">
+        {{#each reviews as |review|}}
+        <div class="homecard">
+            <div>
+                <img class="review-image" src="{{review.img}}" alt="Review Image">
+            </div>
+            <div>
+                <h1 id="custom-revfont">{{review.title}}</h1>
+                <h3>{{this.user.name}}</h3>
+            </div>
+            <div>
+                <p>{{review.description}}</p>
+            </div>
+            <a href="/api/review/{{review.id}}">
+                <button class="readReview">Read Review</button>
+            </a>
         </div>
-        <div>
-            <h1 id="custom-revfont">{{review.title}}</h1>
-            <h3>{{this.user.name}}</h3>
-        </div>
-        <div>
-            <p>{{review.description}}</p>
-        </div>
-        <a href="/api/review/{{review.id}}">
-            <button class="readReview">Read Review</button>
-        </a>
+    {{/each}}
     </div>
-{{/each}}
-</div>
+</body>
