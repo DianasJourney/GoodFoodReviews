@@ -19,20 +19,14 @@
         {{#each reviews as |review|}}
         <!--ADD IMAGE DISPLAY -->
         <div>
-            <img class="review-image" src="{{review.img}}" alt="Review Image">
+            <img class="reimage" src="{{review.img}}" alt="Review Image">
         </div>
             <div>
-                <h2 for="review-title">Review Title:</h2>
                 <h1>{{review.title}}</h1>
             </div>
             <div>
-                <h2 for="review-description">Review Description:</h2>
-                <h1>{{review.description}}</h1>
+                <p>{{review.description}}</p>
             </div>
-            
-        <a href="/api/review/{{review.id}}">
-            <button class="readReview">Read Review</button>
-        </a>
           
         <a href="/api/review/edit/{{review.id}}">
             <button class="editReview">Edit Review</button>
