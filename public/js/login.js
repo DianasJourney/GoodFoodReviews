@@ -1,6 +1,7 @@
 const loginFormHandler = async function (event) {
   event.preventDefault()
 
+  const errorElement = document.getElementById('error-message')
   const usernameEl = document.querySelector('#username-input-login')
   const passwordEl = document.querySelector('#password-input-login')
   const response = await fetch('/api/user/login', {
@@ -11,10 +12,11 @@ const loginFormHandler = async function (event) {
     }),
     headers: { 'Content-Type': 'application/json' }
   })
-
+let messages = []
   if (!response.ok) {
-    throw new Error('HTTP error: ' + response.status)
-  }
+    messages.push('Invalid password or email')
+    errorElement.innerText = messages;
+  } else
   document.location.replace('/reviewboard/')
 }
 
