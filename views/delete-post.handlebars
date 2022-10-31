@@ -1,22 +1,27 @@
-<article>
-  <a href="/reviewboard"> &larr; Back</a>
-  <h2 >Delete Review</h2>
+<article id="custom-deletebg">
+
+  <h2 id="custom-deleteh2"><a id="backdelbtn" class="ui left floated mini button" href="/reviewboard"> &larr; Back</a>Are you sure want to delete your review?</h2>
 
   <form class="delete-review-form">
     <div>
-        <h2 for="review-title">Review Title:</h2>
-      <h2>{{review.title}}</h2>
+      <img id="deleteimg" src="{{review.img}}" />
     </div>
-    <div>
-        <h2 for="review-description">Review Description:</h2>
-      <p>{{review.description}}</p> 
+    <div class="ui three column centered grid">
+      <div class="stretched row">
+        <div class="column">
+          <div class="ui segment">
+            <h2 id="h2delrev" for="review-title">Review:</h2>
+            <p id="revdeletetitle2">{{review.title}}</p>
+            <h2 id="descriptdelrev" for="review-description">Description:</h2>
+            <p id="deldescript">{{review.description}}</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <h2 for="review-image">Image Link:</h2>
-      <img src="{{review.img}}"/>
     </div>
-    <button class="deleteReview">Delete Review</button>
+    <button id='deleteReview' class="ui red button" >Delete Review</button>
   </form>
 </article>
 
 <script src="/js/delete.js"></script>
+
