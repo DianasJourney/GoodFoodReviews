@@ -1,0 +1,63 @@
+.signin-bg {
+    background-image: url('/images/homepagefoodbg.jpg');
+    background-size: cover;
+    background-repeat: none;
+}
+
+.custom-loginsignupbox {
+    width: 60%;
+    text-align: center;
+}
+
+#custom-border{
+background-color: rgb(212, 211, 211);
+position: relative;
+left: 34%;
+margin-top: 17%;
+opacity: 90%;
+}
+
+#custom-signupinput{
+    font-weight: var(--font-weight);
+     font-size: var(--font);
+     text-align: center;
+}
+
+#error-message2{
+    background-color: red;
+    color: white;
+}
+
+
+#custom-name{
+    font-weight: var(--font-weight);
+    font-size: var(--font);
+    text-align: center;
+}
+
+.custom-nameinput{
+    width: 50%;
+    padding: 2px;
+    margin-top: 2px;
+    margin-bottom: 1%;
+}
+
+#custom-logdescript{
+    margin-top: 1%;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#custom-createtitle{
+    padding: 0;
+    margin-bottom: 2%;
+    font-size: 25px;
+}
+
+.custom-signuppass{
+    width: 50%;
+    padding: 2px;
+    margin-top: 2px;
+    margin-bottom: 1%;
+
+}

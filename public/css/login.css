@@ -1,0 +1,63 @@
+
+
+.custom-logintitle{
+    padding: 10px;
+    margin-bottom: 3.5%;
+    margin-top: 2%;
+}
+
+#custom-linespace{
+    padding: 2%;
+}
+
+#error-message{
+    background-color: red;
+    color: white;
+    border-style: solid black;
+    border-radius: 4px;
+    font-weight: bolder;
+    margin-bottom: 1%;
+    display: flex;
+    width: 165px;
+    justify-content: center;
+    position: relative;
+    left: 41%;
+}
+
+#signup-btn{
+    margin-top: .5%;
+}
+
+#custom-signuptitle{
+     padding: 10px;
+     margin-top: 1%;
+
+}
+
+.custom-create{
+    font-size: 20px;
+    margin: 0;
+    font-weight: bolder;
+    margin-top: 2%;
+}
+
+#login-btn{
+    margin-bottom: 1%;
+}
+
+.custom-inputemail{
+    width: 50%;
+    padding: 2px;
+    margin-top: 2px;
+    margin-bottom: 1%;
+}
+
+.custom-passinput{
+    width: 52%;
+    padding: 2px;
+    margin-top: 2px;
+    position: relative;
+    right: 0%;
+    background-color: white;
+}
+
