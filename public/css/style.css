@@ -6,9 +6,18 @@
     --primary: #1b6535;
 }
 
+#custom-mainheader{
+    border-bottom: solid rgb(0, 0, 0);
+    background-color: #7e4141;
+}
 
+.custom-header{
+    text-align: center;
+    margin: 2px;
+}
 nav{
     text-align: center;
+    margin-bottom: 4px;
 }
 .signin-bg {
     background-image: url('/images/homepagefoodbg.jpg');
@@ -144,7 +153,7 @@ opacity: 90%;
 .homecontainer {
 --gap: 16px;
 --num-cols: 4;
---row-height: 110%;
+/* --row-height: 110%; */
     
     padding: 2px var(--gap);
     display: grid;
@@ -153,6 +162,7 @@ opacity: 90%;
 }
     
 .homecard{
+    margin-top: 10%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 95%;
@@ -227,20 +237,56 @@ opacity: 90%;
     color: white;
 }
 
-.app-title{
+.app-title {
     text-align: center;
+    font-size: 60px;
+    color: rgb(247, 247, 247);
+    animation: app-title 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes app-title {
+  from {
+    text-shadow: 0 0 10px rgb(9, 9, 9), 0 0 20px #fff, 0 0 30px #9ca1ec, 0 0 40px #008ee6, 0 0 50px #95aaef, 0 0 60px #708997, 0 0 70px #83c2d0;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #f7f5f6, 0 0 40px #908289, 0 0 50px #b4afb2, 0 0 60px #a2edf2, 0 0 70px #4b89ed, 0 0 80px #7bb2ee;
+  }
 }
 
 #custom-reviewtitle{
-    margin-top: 9%;
+    margin-top: 15%;
+    margin-bottom: 9%;
+    font-size: 30px;
+    font-family: archivo;
+    font-weight: bolder;
+    color: rgb(6, 60, 177);
+	font-size: 40px;
+	text-shadow: -1px 1px 0 rgb(255, 255, 255),
+				  1px 1px 0 rgb(255, 255, 255),
+				  1px -1px 0 rgb(255, 255, 255);
 }
 
-.deleteReview,
-.editReview,
-.viewComment
-{
-    cursor: pointer;
+#newCreate{
+text-align: center;
+margin: 0.5%;
 }
 
+#custom-revfont{
+    font-family: archivo;
+}
 
+#custom-reviewtitleBG{
+    background-image: url('/images/descriptbg.jpg');
+}
 
+#custom-revdescname{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: archivo;
+}
+
+#custom-reviewdescription{
+    margin: 5px;
+    font-size: 18px;
+}
