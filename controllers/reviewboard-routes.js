@@ -20,10 +20,10 @@ router.get('/', withAuth, async(req, res) => {
       res.render('reviewboard', { reviews, loggedIn: req.session.loggedIn });
     }
     else {
-      res.status(404).end()
+      res.status(404).end();
     }
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
 });
 
@@ -44,10 +44,10 @@ router.get('/edit/:id', withAuth, async(req, res) => {
         review
       });
     } else {
-      res.status(404).end()
+      res.status(404).end();
     }
     } catch (err) {
-      res.status(500).json(err)
+      res.status(500).json(err);
     }
   });
 
@@ -62,10 +62,10 @@ router.get('/delete/:id', withAuth, async(req, res) => {
       review
     });
   } else {
-    res.status(404).end()
+    res.status(404).end();
   }
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
 });
 
