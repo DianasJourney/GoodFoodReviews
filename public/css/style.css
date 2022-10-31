@@ -236,3 +236,21 @@ opacity: 90%;
   padding: 0px 0px 0px 18px;
 } */
 
+#error-message{
+    background-color: red;
+    color: white;
+    border-style: solid black;
+    border-radius: 4px;
+    font-weight: bolder;
+    margin-bottom: 1%;
+    display: flex;
+    width: 165px;
+    justify-content: center;
+    position: relative;
+    left: 41%;
+}
+
+#error-message2{
+    background-color: red;
+    color: white;
+}
