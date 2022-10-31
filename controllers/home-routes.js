@@ -33,7 +33,7 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   (req.session.loggedIn) 
   ? res.redirect('/')
-  : res.render('login');
+  : res.render('signup');
 })
 
 module.exports = router;

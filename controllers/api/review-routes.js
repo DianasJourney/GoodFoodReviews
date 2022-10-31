@@ -1,14 +1,15 @@
-const router = require('express').Router()
-const { User, Comment, Review } = require('../../models')
-const withAuth = require('../../utils/auth')
+const router = require('express').Router();
+const { User, Comment, Review } = require('../../models');
+//Helper function to ensure that resources being accessed are only available with the correct authorization
+const withAuth = require('../../utils/auth');
 // New library - used to determine if a URL leads to an image
 // Npm link: https://www.npmjs.com/package/image-url-validator
 const isImageURL = require('image-url-validator').default
 
-//withAuth out
+// Asynchronously CREATE new Review
 router.post('/', async (req, res) => {
   //Validate image link before creating new Review
-  if (await isImageURL(req.body.img)) {
+  //if (await isImageURL(req.body.img)) {
     try {
       const newReview = await Review.create({
         title: req.body.title,
@@ -21,9 +22,9 @@ router.post('/', async (req, res) => {
     } catch (err) {
       res.status(500).json(err)
     }
-  } else {
-    console.log('Not an image link!')
-  }
+  //} else {
+    //console.log('Not an image link!')
+  //}
 })
 
 //updating our posted review
