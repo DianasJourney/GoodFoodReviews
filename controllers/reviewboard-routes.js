@@ -26,45 +26,41 @@ router.get('/create', withAuth, (req, res) => {
   })
 })
 
-//make below async, not a Promise?
-router.get('/edit/:id', withAuth, (req, res) => {
-  Review.findByPk(req.params.id)
-    .then(dbPostData => {
-      if (dbPostData) {
-        const post = dbPostData.get({ plain: true })
-
-        res.render('edit-post', {
-          layout: 'main',
-          post
-        })
-      } else {
-        res.status(404).end()
-      }
-    })
-    .catch(err => {
+router.get('/edit/:id', withAuth, async (req, res) => {
+  try {
+    const reviewData = await Review.findByPk(req.params.id);
+    
+    if (reviewData) {
+      const review = reviewData.get({ plain: true });
+      res.render('edit-post', {
+        layout: 'main',
+        review
+      })
+    } else {
+      res.status(404).end()
+    }
+    } catch (err) {
       res.status(500).json(err)
-    })
-});
+    }
+  });
 
-//make below async, not a Promise?
+
 router.get('/delete/:id', withAuth, async (req, res) => {
-  console.log('router get delete reached')
-  Review.findByPk(req.params.id)
-    .then(dbPostData => {
-      if (dbPostData) {
-        const post = dbPostData.get({ plain: true })
-
-        res.render('delete-post', {
-          layout: 'main',
-          post
-        })
-      } else {
-        res.status(404).end()
-      }
+  try {
+  const reviewData = await Review.findByPk(req.params.id);
+  
+  if (reviewData) {
+    const review = reviewData.get({ plain: true });
+    res.render('delete-post', {
+      layout: 'main',
+      review
     })
-    .catch(err => {
-      res.status(500).json(err)
-    })
+  } else {
+    res.status(404).end()
+  }
+  } catch (err) {
+    res.status(500).json(err)
+  }
 });
 
 module.exports = router
