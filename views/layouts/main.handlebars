@@ -13,6 +13,23 @@
         <h1>Goodie Foodie Reviews</h1>
         <nav>
           <a href="/">Homepage</a>
+
+{{!-- <div class="ui secondary  menu">
+  <a class="item" href="/">
+    Home
+  </a>
+  <a class="item" href="/reviewboard">
+    Review Board
+  </a>
+  <a class="item" href="#">
+    Friends
+  </a>
+  <div class="right menu">
+    <a class="ui item active">
+      Logout
+    </a>
+  </div>
+</div> --}}
             {{#if loggedIn}}
             <a href="/reviewboard">Review Board</a>
             <a href="#" id="logout-link">Logout</a>
@@ -29,5 +46,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
   <script src="/js/logout.js"></script>
   </body>
-
 </html>
