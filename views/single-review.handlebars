@@ -1,55 +1,37 @@
-<div>
-    <article>
-        <div>
-            <h2>{{review.title}}</h2>
-            <div>
-                Posted by {{review.user.name}}
-                 {{!-- on {{format_date post.createdAt}} --}}
-            </div>
-        </div>
-        <div>
-            {{review.description}}
-        </div>
-    </article>
+<article> <!-- Displays selected review using data from the database -->
+    <h1>{{review.title}}</h1>
+    <h2>Posted by {{review.user.name}}</h2>{{!-- on {{format_date post.createdAt}} --}}
+    <p>{{review.description}}</p>
+</article>
 
-    {{#if review.comments}}
-    <section>
-        <div>
-            <h4>Comments</h4>
-        </div>
-
-        <div>
-            {{#each review.comments as |comment|}}
-            <div>
+{{#if review.comments}} <!-- If there are comments on this review, display them below -->
+    <section class="comment-section">
+        <h4>Comments</h4>
+        {{#each review.comments as |comment|}} <!--Loop through all comments and display each and the user who wrote them-->
+            <section class="comment">
                 <p>
                     {{comment.body}}
-                </p>
-                <p>
+                    <br />
                     &mdash; {{comment.user.name}}
                     {{!-- , {{format_date createdAt}} --}}
                 </p>
-            </div>
-            {{/each}}
-        </div>
+            </section>
+        {{/each}}
     </section>
-    {{/if}}
-    
-{{#if loggedIn}}
-<form id="new-comment-form" class="card">
-    <div class="card-header">
-        <h3>Add a New Comment</h3>
+{{/if}}
+
+{{#if loggedIn}} <!--If the user is logged in, allow them to make their own comments-->
+    <form id="new-comment-form" class="card">
+        <div class="card-header">
+            <h3>Leave a Comment</h3>
+        </div>
+        <div class="card-body">
+            <input type="hidden" name="review-id" value={{review.id}} /> <!-- stores which review the comment refers to-->
+            <!--<label class="form-label" for="comment-body">Comment</label>-->  <!--redundant code?-->
+            <textarea name="comment-body" class="form-input"></textarea>
+            <button type="submit" class="ui inverted green button">Submit</button>
+        </div>
+    </form>
     </div>
-
-    <div class="card-body">
-        <input type="hidden" name="review-id" value={{review.id}} />
-
-        <label class="form-label" for="comment-body">Comment</label>
-
-        <textarea name="comment-body" class="form-input"></textarea>
-
-        <button type="submit" class="btn">Submit</button>
-    </div>
-</form>
-</div>
 {{/if}}
 <script src="/js/comment.js"></script>
