@@ -9,15 +9,19 @@
   </head>
 
   <body>
-        <nav>
-          <a href="/">Homepage</a>
-            {{#if loggedIn}}
-            <a href="/reviewboard">Review Board</a>
-            <a href="#" id="logout-link">Logout</a>
-            {{else}}
-            <a href="/login" class="login-button">login</a>
-            {{/if}}
-        </nav>
+    <header id="custom-mainheader">
+      <h1 class="custom-header">Goodie Foodie's Review</h1>
+      <nav>
+        <a class="ui brown button" href="/">Homepage</a>
+        {{#if loggedIn}}
+        <a class="ui brown button" href="/reviewboard">Review Board</a>
+        <a class="ui brown button" href="#" id="logout-link">Logout</a>
+        {{else}}
+        <a class="ui brown button" href="/login" class="login-button">login</a>
+        {{/if}}
+      </nav>
+    </header>
+ 
    <main>
     {{{ body }}}
     
