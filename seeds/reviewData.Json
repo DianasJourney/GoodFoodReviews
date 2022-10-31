@@ -15,7 +15,7 @@
   
   {
     "title": "Dylan Review 1",
-    "description": "Review 1 desc",
+    "description": "Review 1 desc,
     "user_id" : 2,
     "img" : "https://api.vip.foodnetwork.ca/wp-content/uploads/2021/12/halloween-charcuterie-feature.jpg?w=1080&quality=75"
   
@@ -23,7 +23,7 @@
   {
     "title": "Mimi review 1",
     "description": "Review 1 desc",
-    "user_id" : 3,
+    "user_id" : 2,
     "img" : "https://api.vip.foodnetwork.ca/wp-content/uploads/2022/01/FNC_OGImage_Taiwanese-Beef-Noodle-Soup.jpg"
   }
 ]
