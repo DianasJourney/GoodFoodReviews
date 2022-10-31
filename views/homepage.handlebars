@@ -1,3 +1,11 @@
+<div class="pusher">
+    <div class="ui inverted vertical masthead black center aligned segment">
+        <img src="/images/foodiebg.jpg" alt="homepagelayout">
+            <div class="ui text container">
+                <div class="ui huge brown button">Read more below</div>
+            </div>
+    </div>
+</div>
 <body class="home-bg">
     <div class="homecontainer">
         {{#each reviews as |review|}}
@@ -13,7 +21,7 @@
                 <p>{{review.description}}</p>
             </div>
             <a href="/api/review/{{review.id}}">
-                <button class="readReview">Read Review</button>
+                <button class="ui brown button" class="readReview">Read Review</button>
             </a>
         </div>
     {{/each}}
