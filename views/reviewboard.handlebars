@@ -10,7 +10,7 @@
 
 <body>
     <header class="hero">
-        <h1 class="app-title"><a href="/reviewboard">Your Review Board</a></h1>
+        <h1 class="app-title"><a href="/reviewboard">Review Board</a></h1>
     </header>
     <a href="/reviewboard/create"><button class="create-new-review">Create New Review</button>
     </a>
@@ -18,27 +18,35 @@
     <main>
         {{#each reviews as |review|}}
         <!--ADD IMAGE DISPLAY -->
-        <div>
-            <img class="reimage" src="{{review.img}}" alt="Review Image">
-        </div>
-            <div>
-                <p>{{review.title}}</p>
+            <div class="ui three column center aligned divided grid ">
+                <div class="stretched row">
+                    <div class="column">
+                        <div class="ui segment">
+                            <img class="reimage ui fluid image" src="{{review.img}}" alt="Review Image">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui segment">
+                            <p id="custom-reviewtitle">{{review.title}}</p>
+                        </div>
+                        <div class="ui segment">
+                            <span id="custom-revdescname">Description:</span>
+                            <p id="custom-reviewdescription">{{review.description}}</p>
+                            <button class="ui inverted primary button" class="viewComment">View Comment</button>
+                            <a href="/api/review/edit/{{review.id}}">
+                                <button class="ui inverted green button" class="editReview">Edit Review</button>
+                            </a>
+                            <a href="/api/review/delete/{{review.id}}">
+                                <button class="ui inverted red button" class="deleteReview">Delete Review</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h2 for="review-description">Review Description:</h2>
-                <p>{{review.description}}</p>
-            </div>
-          
-        <a href="/api/review/edit/{{review.id}}">
-            <button class="editReview">Edit Review</button>
-        </a>  
-        <a href="/api/review/delete/{{review.id}}">
-            <button class="deleteReview">Delete Review</button>
-        </a>
             {{/each}}
     </main>
-    
 </body>
 
 <script src="/js/logout.js"></script>
 </html>
+
