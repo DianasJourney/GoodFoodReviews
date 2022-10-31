@@ -5,6 +5,8 @@ async function newFormHandler(event) {
     const description = document.querySelector('input[name="review-description"]').value;
     const img = document.querySelector('input[name="review-image"]').value;
 
+    const errorElement = document.getElementById('error-message');
+
       const response = await fetch(`/api/review`, {
       method: 'POST',
       body: JSON.stringify({
@@ -19,9 +21,7 @@ async function newFormHandler(event) {
     
     if (response.ok) {
       document.location.replace('/reviewboard');
-    } else {
-      alert(response.statusText);
-    }
+    } 
   }
   
   document.querySelector('.submitReview').addEventListener('click', newFormHandler);

@@ -19,7 +19,6 @@ Comment.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-        //this will belong to the user who wrote it for and will also belong to the review it is written on
         review_id: {
             type: DataTypes.INTEGER,
             references: { model: 'review', key: 'id' }
@@ -31,7 +30,6 @@ Comment.init(
         underscored: true,
         timestamps: false,
         modelName: 'comment'
-
     }
 );
 
