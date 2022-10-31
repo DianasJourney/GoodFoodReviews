@@ -1,8 +1,7 @@
-<div class="homecontainer">
+<div>
     {{#each reviews as |review|}}
-    <div class="homecard">
-        <div>
-            <img class="review-image" src="{{review.img}}" alt="Review Image" style="width:100%">
+    <div>
+            <img class="review-image" src="{{review.img}}" alt="Review Image">
         </div>
         <div>
             <h2 for="review-title">Review Title:</h2>
@@ -15,6 +14,5 @@
         <a href="/api/review/{{review.id}}">
             <button class="readReview">Read Review</button>
         </a>
-    </div>
 {{/each}}
 </div>
