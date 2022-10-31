@@ -15,16 +15,12 @@ Good Food Review's welcome all users from anywhere around the world to share the
 
 ## Technology
 The following technologies/library that were used to build this application:
-- Vscode
 - MySQL
 - NodeJs
 - Express
 - Sequelize
-- Express handlebars
-- Bcrpyt
-- Connect session sequelize
-- MySQL2
-- DotEnv
+- Handlebars.Js
+- Sequelize hooks
 
 ## Userstory:
 
@@ -36,7 +32,7 @@ The following technologies/library that were used to build this application:
 ```
 - Given a food blog website
 - WHEN I visit the site
-- THEN I am presented with the hompage that only shows the login/sign up before I can view any content
+- THEN I am presented with the homepage that only shows the login/sign up before I can view any content
 - WHEN I choose to sign up
 - Then I am prompted to create a username and password
 - WHEN I have created my account
@@ -68,9 +64,6 @@ The following technologies/library that were used to build this application:
 ![reviewboard-mockup](https://user-images.githubusercontent.com/109758045/199080174-13f81e77-88e5-427b-bf9d-d6e7a23ede8b.PNG)
 
 
-## Tests
-To access and use Good Food Reviews is simple please scroll down to the section "USAGE" there it will display a link url to the website or you can type in ```https://goodie-foodies-heroku.herokuapp.com/``` in your url and it will direct you to the home page! User's will need to create an account before being able to post, edit, comment, and delete reviews! After an account has been created, users can freely navigate and post as much as they want!
-
 ## Roadmap
 
 Good Food Reviews still has a few progress that currently in works. Future plans for Good Food Reviews are the following:
@@ -84,6 +77,7 @@ Good Food Reviews still has a few progress that currently in works. Future plans
 No installations are needed to use Good Food Reviews
 
 ## Usage
+To access and use Good Food Reviews is simple please scroll down to the section "USAGE" there it will display a link url to the website or you can type in ```https://goodie-foodies-heroku.herokuapp.com/``` in your url and it will direct you to the home page! User's will need to create an account before being able to post, edit, comment, and delete reviews! After an account has been created, users can freely navigate and post as much as they want!
 
 - [Link to Heroku Deployment](https://goodie-foodies-heroku.herokuapp.com/)
 
@@ -92,15 +86,15 @@ Feel free to contact us if you have any questions or concerns!
 
 ## Acknowledgements ![GitHub contributors](https://img.shields.io/github/contributors/branbao1995/beer-meal-buddies?label=contributers)
 
-Mimi Tach
+**Mimi Tach**
 
 - [Github Link](https://github.com/TsunomakiWatamee)
 
-Dylan GodFrey
+**Dylan Godfrey**
 
 - [Github Link](https://github.com/DylanGodfrey)
 
-Diana Vu
+**Diana Vu**
 
 - [Github Link](https://github.com/DianasJourney)
 
@@ -108,7 +102,7 @@ Diana Vu
 
 MIT License
 
-Copyright (c) 2022 Diana Vu, Dylan GodFrey, Mimi Tach
+Copyright (c) 2022 Diana Vu, Dylan Godfrey, Mimi Tach
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
