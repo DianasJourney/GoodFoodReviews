@@ -10,9 +10,10 @@
 
   <body>
     <header>
-
+        <h1>Goodie Foodie Reviews</h1>
+        <nav>
+          <a href="/">Homepage</a>
             {{#if loggedIn}}
-
 <div class="ui secondary  menu">
   <a class="item" href="/">
     Home
@@ -29,36 +30,15 @@
     </a>
   </div>
 </div>
-
-        <nav class="navigations">
-          <div class="wrapper">
-            <h1>Goodie Foodie Reviews</h1>
-
-          <div class="homep">
-            <a href="/">Homepage</a>
-          </div> --}}
-
-           {{#if loggedIn}} --}}
-            <div class="createreview">
-              <a href="/reviewboard">Review Board</a>
-            </div> <!--POST new review --> --}}
-
-            <div class="log-out">
-              <a href="#" id="logout-link">Logout</a>
-            </div>
-
             {{else}}
             <a href="/login" class="login-button">login</a>
-
             {{/if}}
-            </div>
         </nav>
-
     </header>
    <main>
     {{{ body }}}
     
-  </main>
+    </main>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
   </body>
