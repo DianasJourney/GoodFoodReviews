@@ -2,12 +2,12 @@
 [
   {
     "user_id": 1,
-    "body": "Wow! Great review!",
+    "body": "That is cool",
     "review_id" : 1
   },
   {
     "user_id": 2,
-    "body": "I love it!",
+    "body": "I'm digging it",
     "review_id" : 2
   },
   {
