@@ -13,7 +13,7 @@
 
             {{#if loggedIn}}
 
-{{!-- <div class="ui secondary  menu">
+<div class="ui secondary  menu">
   <a class="item" href="/">
     Home
   </a>
@@ -28,25 +28,7 @@
       Logout
     </a>
   </div>
-</div> --}}
-
-        <nav class="navigations">
-          <div class="wrapper">
-            <h1>Goodie Foodie Reviews</h1>
-
-          <div class="homep">
-            <a href="/">Homepage</a>
-          </div>
-
-            {{!-- {{#if loggedIn}} --}}
-            <div class="createreview">
-              <a href="/reviewboard">Review Board</a>
-            </div> <!--POST new review -->
-
-            <div class="log-out">
-              <a href="#" id="logout-link">Logout</a>
-            </div>
-
+</div>
             {{else}}
             <a href="/login" class="login-button">login</a>
 
@@ -62,5 +44,4 @@
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
   </body>
-
 </html>
