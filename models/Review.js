@@ -33,7 +33,7 @@ Review.init(
         freezeTableName: true,
         timestamps: false,
         modelName: 'review'
-}
+    }
 );
 
 module.exports = Review;

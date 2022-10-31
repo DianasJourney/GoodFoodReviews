@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Review, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-/* Each route defined below will:!
+/* Each route defined below will:
  * Asynchronously GET all of this session users' reviews and 
  * send the serialized data to the corresponding view.
  */
