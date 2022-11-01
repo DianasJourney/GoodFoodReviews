@@ -24,4 +24,4 @@ async function newFormHandler(event) {
     } 
   }
   
-  document.querySelector('.submitReview').addEventListener('click', newFormHandler);
+  document.querySelector('.createReview').addEventListener('click', newFormHandler);
