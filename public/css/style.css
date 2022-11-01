@@ -41,14 +41,12 @@ nav{
 .custom-loginsignupbox {
     width: 60%;
     text-align: center;
+    margin: auto;
+    margin-top: 8%;
 }
 
 #custom-border{
-background-color: rgb(212, 211, 211);
-position: relative;
-left: 34%;
-margin-top: 17%;
-opacity: 90%;
+background-color: rgb(255, 255, 255);
 }
 
 #login-btn{
