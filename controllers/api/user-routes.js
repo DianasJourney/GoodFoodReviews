@@ -12,15 +12,16 @@ router.post('/', async (req, res) => {
 
     // if userData doesn't exists return a 404 response, else allow user to login to their session
     if (!(userData)) {
-      res.status(404).end();
+      res.status(404).json({ message: 'User can\'t be created'});
     }
     else {
       req.session.save(() => {
         req.session.user_id = userData.id
         req.session.username = userData.name
         req.session.loggedIn = true
+        res.status(200).json(userData);
     });
-    res.status(200).end();
+    
     }
   }
   catch (err) {
