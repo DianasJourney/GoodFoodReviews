@@ -1,25 +1,33 @@
-<article id="custom-deletebg">
+<link rel="stylesheet" href="/css/delete-post.css">
 
-  <h2 id="custom-deleteh2"><a id="backdelbtn" class="ui left floated mini button" href="/reviewboard"> &larr; Back</a>Are you sure want to delete your review?</h2>
+<article>
+  <div class="ui animated button" tabindex="0">
+    <a href="/reviewboard">
+      <div class="visible content">Back</div>
+      <div class="hidden content">
+      <i class="left arrow icon"></i>
+      </div>
+    </a>
+  </div>
 
-  <form class="delete-review-form">
-    <div>
-      <img id="deleteimg" src="{{review.img}}" />
-    </div>
+
+
+  <form class="delete-review-form ui form">
     <div class="ui three column centered grid">
       <div class="stretched row">
         <div class="column">
           <div class="ui segment">
-            <h2 id="h2delrev" for="review-title">Review:</h2>
-            <p id="revdeletetitle2">{{review.title}}</p>
-            <h2 id="descriptdelrev" for="review-description">Description:</h2>
-            <p id="deldescript">{{review.description}}</p>
+            <h2>Delete Review:</h2>
+            <img class="reimage ui fluid image" src="{{review.img}}" alt="An assortment of food" />
+              <h2 name="review-title">{{review.title}}</h2>
+              <div>
+                <p name="review-description">{{review.description}}</p>
+              </div>
+            <button id='deleteReview' class="ui red fluid button">Delete Review</button>
           </div>
         </div>
       </div>
     </div>
-    </div>
-    <button id='deleteReview' class="ui red button" >Delete Review</button>
   </form>
 </article>
 
