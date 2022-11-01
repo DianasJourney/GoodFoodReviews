@@ -1,39 +1,50 @@
 <body class="single-bg">
-<article> <!-- Displays selected review using data from the database -->
-    <h1>{{review.title}}</h1>
-    <h2>Posted by {{review.user.name}}</h2>{{!-- on {{format_date post.createdAt}} --}}
-    <p>{{review.description}}</p>
+
+    <div class="singleimage">
+        <img class="view-image" src="{{review.img}}" alt="Review Image">
+    </div>
+
+<div class="infocard">
+<article class="reviewinfo"> <!-- Displays selected review using data from the database -->
+    <h1 id="retitle">{{review.title}}</h1>
+    <h2 id="reuser">Posted by {{review.user.name}}</h2>{{!-- on {{format_date post.createdAt}} --}}
+    <p id="redes">{{review.description}}</p>
 </article>
+</div>
 
-{{#if review.comments}} <!-- If there are comments on this review, display them below -->
-    <section class="comment-section">
-        <h4>Comments</h4>
-        {{#each review.comments as |comment|}} <!--Loop through all comments and display each and the user who wrote them-->
+<div class="commentbox">
+    <div class="commenttask">
+        {{#if review.comments}} <!-- If there are comments on this review, display them below -->
+        <section class="comment-section">
+                <h4 id="Commenttitle">Comments</h4>
+                    {{#each review.comments as |comment|}} <!--Loop through all comments and display each and the user who wrote them-->
             <section class="comment">
-                <p>
-                    {{comment.body}}
-                    <br />
-                    &mdash; {{comment.user.name}}
-                    {{!-- , {{format_date createdAt}} --}}
-                </p>
+                    <p>
+                        {{comment.body}}
+                        <br />
+                        &mdash; {{comment.user.name}}
+                        {{!-- , {{format_date createdAt}} --}}
+                    </p>
             </section>
-        {{/each}}
-    </section>
-{{/if}}
-
-{{#if loggedIn}} <!--If the user is logged in, allow them to make their own comments-->
+            {{/each}}
+        </section>
+        {{/if}}
+    </div>
+    {{#if loggedIn}} <!--If the user is logged in, allow them to make their own comments-->
     <form id="new-comment-form" class="card">
-        <div class="card-header">
+        <div class="card-header"> 
             <h3>Leave a Comment</h3>
         </div>
         <div class="card-body">
-            <input type="hidden" name="review-id" value={{review.id}} /> <!-- stores which review the comment refers to-->
-            <!--<label class="form-label" for="comment-body">Comment</label>-->  <!--redundant code?-->
-            <textarea name="comment-body" class="form-input"></textarea>
-            <button type="submit" class="ui inverted green button">Submit</button>
+            <div class="comment-body">
+                <input type="hidden" name="review-id" value={{review.id}} /> <!-- stores which review the comment refers to-->
+                <!--<label class="form-label" for="comment-body">Comment</label>-->  <!--redundant code?-->
+                <textarea name="comment-body" class="form-input"></textarea>
+                <button type="submit" class="ui inverted green button">Submit</button>
+            </div>
         </div>
     </form>
-    </div>
+</div>
 {{/if}}
 </body>
 <script src="/js/comment.js"></script>
