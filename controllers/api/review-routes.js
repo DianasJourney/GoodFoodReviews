@@ -8,8 +8,8 @@ const isImageURL = require('image-url-validator').default
 
 // Asynchronously CREATE new Review
 router.post('/', async (req, res) => {
-  //Validate image link before creating new Review
-  //if (await isImageURL(req.body.img)) {
+  // Validate image link before creating new Review
+  if (await isImageURL(req.body.img)) {
     try {
       const newReview = await Review.create({
         title: req.body.title,
@@ -23,6 +23,7 @@ router.post('/', async (req, res) => {
       res.status(500).json(err)
     }
   //} 
+}
 })
 
 //updating our posted review
