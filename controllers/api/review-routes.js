@@ -17,14 +17,12 @@ router.post('/', async (req, res) => {
         img: req.body.img,
         user_id: req.session.user_id
       })
-      console.log(newReview.get({ plain: true }))
+
       res.status(200).json(newReview.get({ plain: true }))
     } catch (err) {
       res.status(500).json(err)
     }
-  //} else {
-    //console.log('Not an image link!')
-  //}
+  //} 
 })
 
 //updating our posted review
