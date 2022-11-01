@@ -36,7 +36,9 @@
                         <div class="ui segment" id="custom-reviewbody">
                             <span id="custom-revdescname">Description:</span>
                             <p id="custom-reviewdescription">{{review.description}}</p>
-                            <button class="ui inverted primary button" data-inverted="" data-tooltip="View everyone's comment on your post" data-position="bottom left">View Comment</button>
+                            <a href="/api/review/{{review.id}}">
+                                <button class="ui inverted primary button" data-inverted="" data-tooltip="View everyone's comment on your post" data-position="bottom left">View Comment</button>
+                            </a>
                             <a href="/api/review/edit/{{review.id}}">
                                 <button class="ui inverted green button" data-inverted="" data-tooltip="Click here to make an edit" data-position="bottom left">Edit Review</button>
                             </a>

@@ -31,9 +31,9 @@ Review.init(
     {
         sequelize,
         freezeTableName: true,
-        timestamps: false,
+        timestamps: true,
         modelName: 'review'
-}
+    }
 );
 
 module.exports = Review;

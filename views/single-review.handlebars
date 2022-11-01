@@ -18,14 +18,14 @@
         <section class="comment-section">
                 <h4 id="Commenttitle">Comments</h4>
                     {{#each review.comments as |comment|}} <!--Loop through all comments and display each and the user who wrote them-->
-            <section class="comment">
+            <div style="word-wrap: break-word; flex: inherit" class="ui item active comment">
                     <p>
                         {{comment.body}}
                         <br />
                         &mdash; {{comment.user.name}}
                         {{!-- , {{format_date createdAt}} --}}
                     </p>
-            </section>
+            </div>
             {{/each}}
         </section>
         {{/if}}

@@ -3,10 +3,14 @@
   <h2 >Edit Review</h2>
 
   <form class="edit-review-form">
-    <div>
-        <h2 for="review-title">Review Title:</h2>
+    <div class="ui three column centered grid">
+      <div class="stretched row">
+        <div class="column">
+          <div class="ui segment">
+      <img class="reimage ui fluid image" src="{{review.img}}" alt="foodimage" />
+      <h2 for="review-title">Review Title:</h2>
       <input class="input" name="review-title" type="text" value="{{review.title}}" />
-    </div>
+    
     <div>
         <h2 for="review-description">Review Description:</h2>
       <input class="textarea" name="review-description" type="text" value="{{review.description}}" />
@@ -15,8 +19,13 @@
       <h2 for="review-image">Image Link:</h2>
       <input class="input" type="text" id="review-description" name="review-image" value="{{review.img}}"/>
     </div>
-    <button class="editReview">Update Review</button>
+    
   </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  <button class="editReview">Update Review</button>
 </article>
 
 <script src="/js/edit.js"></script>
