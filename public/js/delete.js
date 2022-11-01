@@ -1,7 +1,5 @@
 async function deleteFormHandler () {
-  //event.preventDefault();
 
-  console.log('this is the review id')
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ]
