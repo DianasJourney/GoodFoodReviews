@@ -1,37 +1,38 @@
+<link rel="stylesheet" href="/css/create-post.css">
+
 <section>
   <div class="ui animated button" tabindex="0">
-    <a href="/reviewboard">
-  <div class="visible content">Back</div>
-  <div class="hidden content">
-    <i class="left arrow icon"></i>
-    </a>
+      <a href="/reviewboard">
+        <div class="visible content">Back</div>
+        <div class="hidden content">
+        <i class="left arrow icon"></i>
+      </a>
+    </div>
   </div>
-</div>
-    
-  <h2 class="title">Create New Food Review</h2><hr>
 
-  <form id="new-form" class="ui reply form middle aligned center aligned grid">
-    <div class="column">
-      <div class="ui large form">
-       <div  class="ui stacked segment">
-      <h2 class="ui header" for="review-title">Title:</h2>
-      <input class="input" type="text" id="review-title" name="review-title" placeholder="Insert review title here"/>
-    <div>
-      <h2 class="ui header" for="review-description">Description:</h2>
-      <input class="input" type="text" id="review-description" name="review-description"placeholder="Insert review description here"/>
-    </div>
-     <div>
-      <h2 for="review-image">Image Link:</h2>
-      <input class="input" type="text" id="review-description" name="review-image"placeholder="Insert review image here"/>
-      <div id="error-message"></div>
-    </div>
+<h2 class="title">Create New Food Review</h2><hr>
 
-    <button class="createReview ui inverted blue button">Create Review</button>
-    </div>
-    </div>
+  <form class="create-review-form ui form">
+      <div class="ui three column centered grid">
+        <div class="stretched row">
+          <div class="column">
+            <div class="ui segment">
+              <h2 for="review-title">Review Title:</h2>
+              <input class="input" name="review-title" type="text" placeholder="Insert review title here" />
+              <div>
+                <h2 for="review-description">Review Description:</h2>
+                <input class="textarea" name="review-description" type="text" placeholder="Insert review description here" />
+              </div>
+              <div>
+                <h2 for="review-image">Review Image Link:</h2>
+                <input class="input" type="text" id="review-description" name="review-image" placeholder="Insert review image here"/>
+              </div>
+               <button id="createReview" class="ui blue fluid button createReview">Create Review</button>
+          </div>
+        </div>
+      </div>
     </div>
   </form>
-  
 </section>
 
 <script src="/js/create.js"></script>

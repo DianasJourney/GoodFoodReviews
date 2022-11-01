@@ -8,7 +8,7 @@
     <section class="comment-section">
         <h4>Comments</h4>
         {{#each review.comments as |comment|}} <!--Loop through all comments and display each and the user who wrote them-->
-            <section class="comment" style="word-wrap: break-word; width:50%;">
+            <section class="comment" style="word-wrap: break-word;flex: inherit; width:50%">
                 <p>
                     {{comment.body}}
                     <br />
