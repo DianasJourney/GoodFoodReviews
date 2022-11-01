@@ -31,12 +31,11 @@
     <section class="comment-section"> <!--ui three column centered grid -->
         <h4 class="ui horizontal divider">Comments</h4>
         {{#each review.comments as |comment|}} <!--Loop through all comments and display each and the user who wrote them-->
-            <section class="comment ui three column centered grid" style="word-wrap: break-word;flex: inherit;">
-                <div class="ui cards">
-                    <div class="card">
-                        <div class="content">
+            <section class="ui center aligned three column grid">
+                <div class="row">
+                        <div class="ui vertical fluid menu">
                             <div class="header">
-                                {{comment.user.name}}
+                              {{comment.user.name}}
                             </div>
                             <div class="description">
                                 {{comment.body}}
@@ -50,6 +49,7 @@
 {{/if}}
 
 {{#if loggedIn}} <!--If the user is logged in, allow them to make their own comments-->
+<section id="comment-form">
     <h4 class="ui horizontal divider">Leave a Comment</h4>
         <form  class="ui reply form">
             <input type="hidden" name="review-id" value={{review.id}} /> <!-- stores which review the comment refers to-->
@@ -57,9 +57,8 @@
             <div class="field">
                 <textarea name="comment-body" class="form-input"></textarea>
             </div>
-            <button id="new-comment-form" class="ui blue button">Comment</button>
+            <button id="new-comment-button" class="ui blue button">Comment</button>
         </form>
+</section>
 {{/if}}
 <script src="/js/comment.js"></script>
-
-
