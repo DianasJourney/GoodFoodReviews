@@ -60,11 +60,11 @@ router.delete('/:id', withAuth, async (req, res) => {
     })
     res.status(200).json(review)
 
-    // if (review > 0) {
+   if (review > 0) {
 
-    // } else {
-    //   res.status(404).json({ message: 'No review found with this id!' })
-    // }
+    } else {
+       res.status(404).json({ message: 'No review found with this id!' })
+     }
   } catch (err) {
     res.status(500).json(err)
   }
@@ -91,11 +91,10 @@ router.get('/:id', async (req, res) => {
       ]
     })
 
-    const review = reviewData.get({ plain: true })
-
-    res.render('single-review', { review, loggedIn: req.session.loggedIn })
+    const review = reviewData.get({ plain: true });
+    res.render('single-review', { review, loggedIn: req.session.loggedIn });
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
 })
 

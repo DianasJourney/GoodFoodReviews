@@ -1,14 +1,23 @@
 <section>
-    <a href="/reviewboard"> &larr; Back</a>
+  <div class="ui animated button" tabindex="0">
+    <a href="/reviewboard">
+  <div class="visible content">Back</div>
+  <div class="hidden content">
+    <i class="left arrow icon"></i>
+    </a>
+  </div>
+</div>
+    
   <h2 class="title">Create New Food Review</h2><hr>
 
-  <form class="new-review-form">
-    <div>
-      <h2 for="review-title">Title:</h2>
+  <form id="new-form" class="ui reply form middle aligned center aligned grid">
+    <div class="column">
+      <div class="ui large form">
+       <div  class="ui stacked segment">
+      <h2 class="ui header" for="review-title">Title:</h2>
       <input class="input" type="text" id="review-title" name="review-title" placeholder="Insert review title here"/>
-    </div>
     <div>
-      <h2 for="review-description">Description:</h2>
+      <h2 class="ui header" for="review-description">Description:</h2>
       <input class="input" type="text" id="review-description" name="review-description"placeholder="Insert review description here"/>
     </div>
      <div>
@@ -17,7 +26,10 @@
       <div id="error-message"></div>
     </div>
 
-    <button class="submitReview">Submit Review</button>
+    <button class="createReview ui inverted blue button">Create Review</button>
+    </div>
+    </div>
+    </div>
   </form>
   
 </section>
