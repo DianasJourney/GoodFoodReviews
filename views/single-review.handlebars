@@ -1,7 +1,12 @@
 <link rel="stylesheet" href="/css/single-review.css">
 
+
 <div class="ui animated button" tabindex="0">
+    {{#if loggedIn}}
     <a href="/reviewboard">
+    {{else}}
+    <a href="/">
+    {{/if}}
         <div class="visible content">Back</div>
         <div class="hidden content">
         <i class="left arrow icon"></i>
