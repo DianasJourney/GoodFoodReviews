@@ -8,7 +8,7 @@ const logout = async function (event) {
   if (!response.ok) {
     throw new Error('HTTP error: ' + response.status)
   }
-
+//waits for the user to hit the logout button then redirects them to the homepage
   document.location.replace('/')
 }
 
