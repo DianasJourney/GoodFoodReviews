@@ -1,37 +1,64 @@
+<link rel="stylesheet" href="/css/single-review.css">
+
+
+<div class="ui animated button" tabindex="0">
+    <a href="/reviewboard">
+        <div class="visible content">Back</div>
+        <div class="hidden content">
+        <i class="left arrow icon"></i>
+        </div>
+    </a>
+</div>
+
+
 <article> <!-- Displays selected review using data from the database -->
-    <h1>{{review.title}}</h1>
-    <h2>Posted by {{review.user.name}}</h2>{{!-- on {{format_date post.createdAt}} --}}
-    <p>{{review.description}}</p>
+    <form class="delete-review-form ui form">
+    <div class="ui three column centered grid">
+      <div class="stretched row">
+        <div class="column">
+          <div class="ui segment">
+            <img class="reimage ui fluid image" src="{{review.img}}" alt="An assortment of food" />
+            <h1>{{review.title}}</h1>
+            <h2>Posted by {{review.user.name}}</h2>{{!-- on {{format_date post.createdAt}} --}}
+            <p>{{review.description}}</p>
+            </div>
+            </div>
+        </div>
+    </form>
 </article>
 
 {{#if review.comments}} <!-- If there are comments on this review, display them below -->
-    <section class="comment-section">
-        <h4>Comments</h4>
+    <section class="comment-section"> <!--ui three column centered grid -->
+        <h4 class="ui horizontal divider">Comments</h4>
         {{#each review.comments as |comment|}} <!--Loop through all comments and display each and the user who wrote them-->
-            <section class="comment" style="word-wrap: break-word;flex: inherit; width:50%">
-                <p>
-                    {{comment.body}}
-                    <br />
-                    &mdash; {{comment.user.name}}
-                </p>
+            <section class="comment ui three column centered grid" style="word-wrap: break-word;flex: inherit;">
+                <div class="ui cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">
+                                {{comment.user.name}}
+                            </div>
+                            <div class="description">
+                                {{comment.body}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         {{/each}}
     </section>
 {{/if}}
 
 {{#if loggedIn}} <!--If the user is logged in, allow them to make their own comments-->
-    <form id="new-comment-form" class="card">
-        <div class="card-header">
-            <h3>Leave a Comment</h3>
-        </div>
-        <div class="card-body">
+    <h4 class="ui horizontal divider">Leave a Comment</h4>
+        <form  class="ui reply form">
             <input type="hidden" name="review-id" value={{review.id}} /> <!-- stores which review the comment refers to-->
-            <!--<label class="form-label" for="comment-body">Comment</label>-->  <!--redundant code?-->
-            <textarea name="comment-body" class="form-input"></textarea>
-            <button type="submit" class="ui inverted green button">Submit</button>
-        </div>
-    </form>
-    </div>
+
+            <div class="field">
+                <textarea name="comment-body" class="form-input"></textarea>
+            </div>
+            <button id="new-comment-form" class="ui blue button">Comment</button>
+        </form>
 {{/if}}
 <script src="/js/comment.js"></script>
 
