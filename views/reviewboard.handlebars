@@ -13,6 +13,7 @@
     <header class="hero">
         <h1 class="app-title">Review Board</h1>
     </header>
+    <!-- creates a new review once the button is pushed-->
     <div id="newCreate">
         <a href="/reviewboard/create"><button class="positive ui button">+ Create New Review</button>
         </a>
@@ -20,7 +21,7 @@
     
     <main>
         {{#each reviews as |review|}}
-        <!--ADD IMAGE DISPLAY -->
+        <!--ADD IMAGE DISPLAY and displays review -->
             <div class="ui three column center aligned divided grid ">
                 <div class="stretched row">
                     <div class="column">
@@ -33,6 +34,7 @@
                             <p id="custom-reviewtitle">{{review.title}}</p>
                         </div>
                         <div class="ui segment" id="custom-reviewbody">
+                            <!-- each buttons will be able to re-direct the users to either the delete, view comment or edit page-->
                             <span id="custom-revdescname">Description:</span>
                             <p id="custom-reviewdescription">{{review.description}}</p>
                             <a href="/api/review/{{review.id}}">
@@ -51,7 +53,7 @@
             {{/each}}
     </main>
 </body>
-
+<!--script to access the logout function-->
 <script src="/js/logout.js"></script>
 </html>
 

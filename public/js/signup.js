@@ -5,6 +5,7 @@ const signupFormHandler = async function (event) {
   const emailEl = document.querySelector('#username-input-signup')
   const passwordEl = document.querySelector('#password-input-signup')
 
+  //a function that throws an error when it is not equal to the corresponding value's needed
   let messages = []
   if (nameEl.value.length <= 2) {
     messages.push('Name is required!')
@@ -22,7 +23,7 @@ const signupFormHandler = async function (event) {
   if (messages.length > 0) {
     errorElement2.innerText = messages.join(' ')
   }
-
+//awaits for users to press create, processes the data stores it and creates it
   const response = await fetch('/api/user', {
     method: 'post',
     body: JSON.stringify({
@@ -32,11 +33,11 @@ const signupFormHandler = async function (event) {
     }),
     headers: { 'Content-Type': 'application/json' }
   })
-  console.log(response)
+
   if (!response.ok) {
     throw new Error('HTTP error: ' + response.status)
   }
-
+//redirects users to the review board
   document.location.replace('/reviewboard')
 }
 
